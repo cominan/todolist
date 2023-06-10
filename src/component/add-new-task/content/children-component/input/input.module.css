@@ -1,0 +1,8 @@
+.inputElement {
+    padding: 6px 8px;
+    width: 100%;
+    border: 2px solid #a8a8a8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}

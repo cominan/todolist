@@ -1,0 +1,14 @@
+
+.label {
+    text-align: left;
+    font-weight: 600;
+    font-size: inherit;
+}
+
+.textArea {
+    width: 100%;
+    padding: 6px 8px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid #333;
+}

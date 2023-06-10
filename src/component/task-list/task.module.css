@@ -1,0 +1,13 @@
+.title {
+    font-weight: 600;
+    margin-top: 64px;
+}
+
+.task {
+    margin-top: 20px;
+}
+.display {
+    margin-bottom: 50px;
+    max-height: 600px;
+    overflow-y: auto;
+}

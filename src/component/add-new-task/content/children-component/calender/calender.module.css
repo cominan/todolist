@@ -1,0 +1,32 @@
+.calender {
+    padding: 6px;
+    width: 16vw;
+}
+
+.dueDate {
+    text-align: left;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 820px) {
+	.calender {
+        padding: 6px;
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 391px) {
+	.calender {
+        padding: 6px;
+        width: 38vw;
+    }
+}
+
+@media screen and (max-width: 321px) {
+	.calender {
+        padding: 6px;
+        width: 72vw;
+    }
+    
+}

@@ -1,0 +1,89 @@
+.content {
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.detailInput {
+    padding: 6px 8px;
+    width: 100%;
+    border: 1px solid #a8a8a8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.label {
+    text-align: left;
+    font-weight: 600;
+    font-size: inherit;
+}
+
+.textArea {
+    width: 100%;
+    padding: 6px 8px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid #333;
+}
+
+.selectContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calender {
+    padding: 6px;
+    width: 16vw;
+}
+
+.dueDate {
+    text-align: left;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+.piority {
+    padding: 8px;
+    outline: none;
+    width: 16vw;
+}
+
+.descPio {
+    text-align: left;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+.buttonAdd {
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    color: white;
+    margin-top: 60px;
+    border: none;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 820px) {
+	.piority {
+        padding: 8px;
+        outline: none;
+        width: 28vw;
+    }
+    .calender {
+        padding: 6px;
+        width: 28vw;
+    }
+}
+
+@media screen and (max-width: 391px) {
+	.piority {
+        padding: 8px;
+        outline: none;
+        width: 34vw;
+    }
+    .calender {
+        padding: 6px;
+        width: 34vw;
+    }
+}
