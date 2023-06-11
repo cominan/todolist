@@ -48,21 +48,27 @@ export const TaskList = ({ data, func }) => {
       setValues(initTask)
     }
   }, [search], 400)
+  console.log(list);
 
   return (
     <ValueListTask.Provider value={value}>
       <h2 className={styles.title}>Todolist</h2>
       <div className={styles.task}>
-        <SearchTask props={setSearch} />
-        <div className={styles.display}>
-          {
-            values && values.map((prop, index) => {
-              return <div key={index}>
-                <ContentTask props={prop} data={data} func={func} />
-              </div>
-            })
-          }
-        </div>
+        <SearchTask props={setSearch} list={list}/>
+        {
+          list.length > 0 ?
+            <div className={styles.display}>
+              {
+                values.map((prop, index) => {
+                  return <div key={index}>
+                    <ContentTask props={prop} data={data} func={func} />
+                  </div>
+                })
+              }
+            </div>
+            :
+            <h2 className={styles.comment}>Nothing here, you can  create a new task now !</h2>
+        }
         <ToastContainer />
       </div>
     </ValueListTask.Provider>

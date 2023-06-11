@@ -6,8 +6,14 @@
 .task {
     margin-top: 20px;
 }
+
 .display {
     margin-bottom: 50px;
     max-height: 600px;
     overflow-y: auto;
+}
+
+.comment {
+    font-size: inherit;
+    font-weight: 300;
 }
