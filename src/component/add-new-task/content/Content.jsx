@@ -1,19 +1,19 @@
 
-import { InputElement } from './children-component/input/InputElement'
-import { AreaElement } from './children-component/area/AreaElement'
-import { CalenderElement } from './children-component/calender/CalenderElement'
-import { PiorityElement } from './children-component/piority/PiorityElement'
-import { useDispatch } from 'react-redux'
-import styles from './content.module.css'
 import { useContext, useRef } from 'react'
+import { useDispatch } from 'react-redux'
 import { ValueContext } from '..'
 import { addnewtask } from '../../../redux/features/stateSlice'
+import { AreaElement } from './children-component/area/AreaElement'
+import { CalenderElement } from './children-component/calender/CalenderElement'
+import { InputElement } from './children-component/input/InputElement'
+import { PiorityElement } from './children-component/piority/PiorityElement'
+import styles from './content.module.css'
 
 
 export const Content = () => {
   const value = useContext(ValueContext)
   const dispatch = useDispatch()
-
+  
   let taskValue = {
     input: value.input,
     desc: value.desc,
@@ -22,7 +22,6 @@ export const Content = () => {
   }
   let currentDate = new Date().toDateInputValue()
 
-
   const ref = useRef(null)
   //click button Add 
   const handleSubmit = (e) => {
@@ -30,7 +29,6 @@ export const Content = () => {
     let task = []
     if (value.input && value.desc) {
       task.push(taskValue)
-      task = task.concat(JSON.parse(localStorage.getItem('task') || '[]'))
       dispatch(addnewtask(task))
       value.setInput('')
       value.setDesc('')
