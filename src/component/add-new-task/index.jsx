@@ -8,12 +8,6 @@ export const ValueContext = createContext()
 
 export const AddNewTask = ({func}) => {
 
-  Date.prototype.toDateInputValue = (function () {
-    var local = new Date(this);
-    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-    return local.toISOString().slice(0, 10);
-  });
-
   let valueDate = new Date().toDateInputValue()
   let arrTask = []
 

@@ -1,19 +1,24 @@
+import { useContext, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { listTask, updatetask } from '../../../redux/features/stateSlice'
 import { ValueListTask } from '../TaskList'
 import { Action } from './Action'
-import styles from './content.module.css'
 import { DetailTask } from './DetailTask'
-import { useContext, useState } from 'react'
+import styles from './content.module.css'
 
 export const ContentTask = ({ props }) => {
 
     const value = useContext(ValueListTask)
-    let initValue = value.props
+    const initValue = useSelector(listTask)
+
+    const dispatch = useDispatch()
     const handleRemove = () => {
         let index = initValue.findIndex(val => val.input == props.input)
+        let newInit = [...initValue]
         if (index !== -1) {
-            initValue.splice(index, 1)
+            newInit.splice(index, 1)
             value.toast('Remove success')
-            localStorage.setItem('task', JSON.stringify(initValue))
+            dispatch(updatetask(newInit))
             value.func(true)
         }
     }
@@ -50,7 +55,7 @@ export const ContentTask = ({ props }) => {
                 {detail && <DetailTask datas={data} value={value} func={setData} />}
             </div>
             <div>
-                {check && <Action props={action} values={value} func={setCheck}/>}
+                {check && <Action props={action} values={value} func={setCheck} />}
             </div>
         </div>
     )

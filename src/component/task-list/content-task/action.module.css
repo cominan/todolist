@@ -9,6 +9,16 @@
     width: 92%;
     left: calc(-50% + 50%);
     border: 1px solid #333;
+    animation: displays .3s ease-in-out;
+}
+
+@keyframes displays {
+    from {
+        bottom: 40px;
+    }
+    to {
+        bottom: 0;
+    }
 }
 
 .detail {

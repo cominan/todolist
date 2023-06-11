@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { listTask, updatetask } from '../../../redux/features/stateSlice'
 import styles from './detailTask.module.css'
 
 
@@ -9,21 +11,26 @@ export const DetailTask = ({ datas, value, func }) => {
     const [calc, setCalc] = useState(datas.calc)
     const [piority, setPiority] = useState(datas.piority)
 
-    let initValue = value.props
-    
+    let initValue = useSelector(listTask)
+
+    const dispatch = useDispatch()
+
     const handleUpdate = () => {
-        if (input || desc || calc || piority) {
+        if (input != datas.input || desc!= datas.desc || calc != datas.calc || piority != datas.piority) {
             let valueChange = {
                 input, desc, calc, piority
             }
             let indexValueChange = initValue.findIndex(value => value.input == datas.input)
+            let newInit = [...initValue]
             if (indexValueChange !== -1) {
-                initValue[indexValueChange] = valueChange
+                newInit[indexValueChange] = valueChange
                 value.toast('Update success')
-                localStorage.setItem('task', JSON.stringify(initValue))
+                dispatch(updatetask(newInit))
                 value.func(true)
                 func('')
             }
+        } else {
+            alert("If you don't change anything, please click the button Detail to back !")
         }
     }
 

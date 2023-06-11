@@ -1,14 +1,19 @@
+import { useDispatch, useSelector } from 'react-redux'
+import { listTask, updatetask } from '../../../redux/features/stateSlice'
 import styles from './action.module.css'
 
 
 export const Action = ({ props, func, values }) => {
-    const value = JSON.parse(localStorage.getItem('task'))
+
+    const initValue = useSelector(listTask)
+    const dispatch = useDispatch()
     const handleRemove = () => {
-        let index = value.findIndex(val => val.input == props.input)
-        if(index !== -1) {
-            value.splice(index, 1)
+        let index = initValue.findIndex(val => val.input == props.input)
+        if (index !== -1) {
+            let newInit = [...initValue]
+            newInit.splice(index, 1)
             values.toast('Remove success')
-            localStorage.setItem('task', JSON.stringify(value))
+            dispatch(updatetask(newInit))
             values.func(true)
             func(false)
         }

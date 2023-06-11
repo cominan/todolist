@@ -1,6 +1,16 @@
 .content {
     padding: 8px;
     margin-top: 4px;
+    animation: opacitys .4s ease-in-out;
+}
+
+@keyframes opacitys {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .detailInput {
