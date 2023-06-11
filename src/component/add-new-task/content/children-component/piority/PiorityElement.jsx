@@ -12,7 +12,9 @@ export const PiorityElement = () => {
       <p className={styles.descPio}>
         <label>Piority</label>
       </p>
-      <select required defaultValue={'Normal'} onChange={(e) => value.setPiority(e.target.value)} className={styles.piority}>
+      <select required defaultValue={'Normal'}
+        onChange={(e) => value.setPiority(e.target.value)}
+        className={styles.piority}>
         <option value='Low'>Low</option>
         <option value='Normal'>Normal</option>
         <option value='High'>High</option>

@@ -16,6 +16,7 @@ export const DetailTask = ({ datas, value, func }) => {
     const dispatch = useDispatch()
 
     const handleUpdate = () => {
+        //check change and update task
         if (input != datas.input || desc!= datas.desc || calc != datas.calc || piority != datas.piority) {
             let valueChange = {
                 input, desc, calc, piority

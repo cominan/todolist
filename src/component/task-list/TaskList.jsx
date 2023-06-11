@@ -13,7 +13,9 @@ export const ValueListTask = createContext()
 export const TaskList = ({ data, func }) => {
 
   const list = useSelector(listTask)
+
   const [search, setSearch] = useState('')
+  //sort task by date
   let initList = [...list]
   initList.length > 0 && initList.sort(function (a, b) {
     return new Date(a.calc) - new Date(b.calc)
@@ -30,11 +32,10 @@ export const TaskList = ({ data, func }) => {
     setValues(initTask)
     func(false)
   }, [data])
-
+  //merge value context
   let value = {
     toast, data, func
   }
-
 
   useDebounce(() => {
     setValues(
@@ -48,13 +49,12 @@ export const TaskList = ({ data, func }) => {
       setValues(initTask)
     }
   }, [search], 400)
-  console.log(list);
 
   return (
     <ValueListTask.Provider value={value}>
       <h2 className={styles.title}>Todolist</h2>
       <div className={styles.task}>
-        <SearchTask props={setSearch} list={list}/>
+        <SearchTask props={setSearch} list={list} />
         {
           list.length > 0 ?
             <div className={styles.display}>

@@ -12,7 +12,9 @@ export const ContentTask = ({ props }) => {
     const initValue = useSelector(listTask)
 
     const dispatch = useDispatch()
+
     const handleRemove = () => {
+        //find id task remove and remove
         let index = initValue.findIndex(val => val.input == props.input)
         let newInit = [...initValue]
         if (index !== -1) {
@@ -26,11 +28,12 @@ export const ContentTask = ({ props }) => {
     const [check, setCheck] = useState(false)
     const [detail, setDetail] = useState(false)
     const [action, setAction] = useState()
-
+    //click button Action
     const handleAction = () => {
         setAction(props)
         setCheck(!check)
     }
+    //click button Detail
     const handleDetail = () => {
         setData(props)
         setDetail(!detail)

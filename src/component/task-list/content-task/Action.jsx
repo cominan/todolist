@@ -7,6 +7,7 @@ export const Action = ({ props, func, values }) => {
 
     const initValue = useSelector(listTask)
     const dispatch = useDispatch()
+    //find index task and remove task
     const handleRemove = () => {
         let index = initValue.findIndex(val => val.input == props.input)
         if (index !== -1) {

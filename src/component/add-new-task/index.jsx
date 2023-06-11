@@ -6,7 +6,7 @@ import { createContext, useState } from 'react';
 
 export const ValueContext = createContext()
 
-export const AddNewTask = ({func}) => {
+export const AddNewTask = ({ func }) => {
 
   let valueDate = new Date().toDateInputValue()
   let arrTask = []
@@ -15,7 +15,7 @@ export const AddNewTask = ({func}) => {
   const [desc, setDesc] = useState('')
   const [calc, setCalc] = useState(valueDate)
   const [piority, setPiority] = useState('Normal')
-
+  //merge value context
   let value = { input, setInput, desc, setDesc, calc, setCalc, piority, setPiority, arrTask, func, toast }
   return (
     <div>

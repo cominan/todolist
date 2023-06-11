@@ -4,8 +4,9 @@ import { AddNewTask } from './component/add-new-task'
 import { TaskList } from './component/task-list/TaskList'
 
 function App() {
-
+  //auto load UI when add task
   const [load, setLoad] = useState(false)
+  //custom type date input
   Date.prototype.toDateInputValue = (function () {
     var local = new Date(this);
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
