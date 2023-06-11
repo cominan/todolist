@@ -5,7 +5,7 @@ import { CalenderElement } from './children-component/calender/CalenderElement'
 import { PiorityElement } from './children-component/piority/PiorityElement'
 import { useDispatch} from 'react-redux'
 import styles from './content.module.css'
-import { useContext } from 'react'
+import { useContext, useRef } from 'react'
 import { ValueContext } from '..'
 import { addnewtask } from '../../../redux/features/stateSlice'
 
@@ -22,6 +22,9 @@ export const Content = () => {
   }
   let currentDate = new Date().toDateInputValue()
 
+
+  const ref = useRef(null)
+
   const handleSubmit = (e) => {
     e.preventDefault()
     let task = []
@@ -35,14 +38,16 @@ export const Content = () => {
       value.setPiority('Normal')
       value.toast('Add success')
       value.func(true)
+      ref.current && ref.current.focus()
     } else {
       alert('Please check the fields')
     }
   }
+  
 
   return (
     <form className={styles.content}>
-      <InputElement />
+      <InputElement ref={ref} value={value}/>
       <AreaElement />
       <div className={styles.selectContent}>
         <CalenderElement />

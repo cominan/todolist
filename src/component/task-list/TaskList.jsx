@@ -41,7 +41,11 @@ export const TaskList = ({ data, func }) => {
       values.filter(val => val.input.toLowerCase().includes(search.toLowerCase()))
     )
     if (search.length === 0) {
-      setValues(list)
+      let initTask = [...list]
+      initTask && initTask.sort(function (a, b) {
+        return new Date(a.calc) - new Date(b.calc)
+      })
+      setValues(initTask)
     }
   }, [search], 400)
 
