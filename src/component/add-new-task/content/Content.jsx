@@ -37,7 +37,6 @@ export const Content = () => {
       value.setCalc(currentDate)
       value.setPiority('Normal')
       value.toast('Add success')
-      value.func(true)
       ref.current && ref.current.focus()
     } else {
       alert('Please check the fields')

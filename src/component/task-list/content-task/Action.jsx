@@ -15,7 +15,6 @@ export const Action = ({ props, func, values }) => {
             newInit.splice(index, 1)
             values.toast('Remove success')
             dispatch(updatetask(newInit))
-            values.func(true)
             func(false)
         }
     }

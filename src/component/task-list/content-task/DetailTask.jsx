@@ -27,7 +27,6 @@ export const DetailTask = ({ datas, value, func }) => {
                 newInit[indexValueChange] = valueChange
                 value.toast('Update success')
                 dispatch(updatetask(newInit))
-                value.func(true)
                 func('')
             }
         } else {

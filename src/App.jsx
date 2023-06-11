@@ -1,11 +1,9 @@
-import { useState } from 'react'
-import './App.css'
-import { AddNewTask } from './component/add-new-task'
-import { TaskList } from './component/task-list/TaskList'
+import './App.css';
+import { AddNewTask } from './component/add-new-task';
+import { TaskList } from './component/task-list/TaskList';
 
 function App() {
-  //auto load UI when add task
-  const [load, setLoad] = useState(false)
+  
   //custom type date input
   Date.prototype.toDateInputValue = (function () {
     var local = new Date(this);
@@ -15,10 +13,10 @@ function App() {
 
 
   return (
-    <div className=''>
-      <div className=''>
-        <AddNewTask func={setLoad} />
-        <TaskList data={load} func={setLoad} />
+    <div>
+      <div>
+        <AddNewTask  />
+        <TaskList />
       </div>
     </div>
   )

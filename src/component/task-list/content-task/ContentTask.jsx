@@ -21,7 +21,6 @@ export const ContentTask = ({ props }) => {
             newInit.splice(index, 1)
             value.toast('Remove success')
             dispatch(updatetask(newInit))
-            value.func(true)
         }
     }
     const [data, setData] = useState()
