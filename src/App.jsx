@@ -4,7 +4,6 @@ import { TaskList } from './component/task-list/TaskList';
 
 function App() {
   
-  //custom type date input
   Date.prototype.toDateInputValue = (function () {
     var local = new Date(this);
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
