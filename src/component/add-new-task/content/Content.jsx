@@ -23,7 +23,6 @@ export const Content = () => {
   let currentDate = new Date().toDateInputValue()
 
   const ref = useRef(null)
-  //click button Add 
   const handleSubmit = (e) => {
     e.preventDefault()
     let task = []
