@@ -10,6 +10,7 @@ function App() {
     return local.toISOString().slice(0, 10);
   });
 
+console.log("test part 7 set up CI/CD")
   return (
     <div>
       <div>
