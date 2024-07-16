@@ -41,7 +41,7 @@ export const Content = () => {
     }
   }
 
-console.log("check set up CI/CD");
+console.log("check set up CI/CD part 2");
   return (
     <form className={styles.content}>
       <InputElement ref={ref} value={value} />
