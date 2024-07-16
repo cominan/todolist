@@ -41,7 +41,7 @@ export const Content = () => {
     }
   }
 
-
+console.log("value",value);
   return (
     <form className={styles.content}>
       <InputElement ref={ref} value={value} />
